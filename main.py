@@ -37,6 +37,14 @@ class HelloWorld(FlowLauncher):
                     "ContextData": "ctxData"
                 })
                 return results
+            if arg.fps is None:
+                results.append({
+                    "Title": "FPS = 1 / StepTime * rank * batch)",
+                    "SubTitle": "FPS: {}".format(calc.calc_fps(arg)),
+                    "IcoPath": "Images/app.png",
+                    "ContextData": "ctxData"
+                })
+                return results
 
         results.append({
             "Title": "Not support Yet",

@@ -84,3 +84,12 @@ class CalcArg:
 
 def calc_step_time(arg: CalcArg):
     return "{:.2f}ms".format(1 / (arg.fps / arg.rank / arg.batch) * 1000)
+
+
+def calc_fps(arg: CalcArg):
+    fps = 1 / (arg.step_time / 1000) * arg.batch * arg.rank
+    if int(fps) % 10000 == 0:
+        return "{:.2f}w/s".format(fps/10000)
+    if int(fps) % 1000 == 0:
+        return "{:.2f}k/s".format(fps/1000)
+    return "{:.2f}/s".format(fps)
