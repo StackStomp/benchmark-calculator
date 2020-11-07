@@ -1,0 +1,12 @@
+{
+    "ID":"31a82d8a-fe57-457a-b684-8a2fa6ed2057",
+    "ActionKeyword":"bc",
+    "Name":"Benchmark data Calculator",
+    "Description":"Batch, Rank, FPS, StepTime, Get 3, calc 1",
+    "Author":"StackStomp",
+    "Version":"1.0",
+    "Language":"python",
+    "Website":"https://github.com/stackstomp/benchmark-calculator",
+    "IcoPath":"Images\\app.png",
+    "ExecuteFileName":"main.py"
+}
