@@ -1,3 +1,6 @@
+from math import ceil as math_ceil
+
+
 class ParseError:
     def __init__(self, message):
         self.message = message
@@ -97,9 +100,9 @@ def calc_fps(arg: CalcArg):
 
 def calc_rank(arg: CalcArg):
     r = arg.fps * arg.step_time / 1000 / arg.batch
-    return "{} ({:.1f})".format(int(r) + 1, r)
+    return "{} ({:.1f})".format(math_ceil(r), r)
 
 
 def calc_batch(arg: CalcArg):
     r = arg.fps * arg.step_time / 1000 / arg.rank
-    return "{} ({:.1f})".format(int(r) + 1, r)
+    return "{} ({:.1f})".format(math_ceil(r), r)
