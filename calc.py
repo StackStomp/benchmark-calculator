@@ -93,3 +93,13 @@ def calc_fps(arg: CalcArg):
     if int(fps) % 1000 == 0:
         return "{:.2f}k/s".format(fps/1000)
     return "{:.2f}/s".format(fps)
+
+
+def calc_rank(arg: CalcArg):
+    r = arg.fps * arg.step_time / 1000 / arg.batch
+    return "{} ({:.1f})".format(int(r) + 1, r)
+
+
+def calc_batch(arg: CalcArg):
+    r = arg.fps * arg.step_time / 1000 / arg.rank
+    return "{} ({:.1f})".format(int(r) + 1, r)

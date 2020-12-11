@@ -39,8 +39,24 @@ class HelloWorld(FlowLauncher):
                 return results
             if arg.fps is None:
                 results.append({
-                    "Title": "FPS = 1 / StepTime * rank * batch)",
+                    "Title": "FPS = 1 / StepTime * rank * batch",
                     "SubTitle": "FPS: {}".format(calc.calc_fps(arg)),
+                    "IcoPath": "Images/app.png",
+                    "ContextData": "ctxData"
+                })
+                return results
+            if arg.rank is None:
+                results.append({
+                    "Title": "Rank = FPS * StepTime / Batch",
+                    "SubTitle": "Rank: {}".format(calc.calc_rank(arg)),
+                    "IcoPath": "Images/app.png",
+                    "ContextData": "ctxData"
+                })
+                return results
+            if arg.batch is None:
+                results.append({
+                    "Title": "Batch = FPS * StepTime / Rank",
+                    "SubTitle": "Batch: {}".format(calc.calc_batch(arg)),
                     "IcoPath": "Images/app.png",
                     "ContextData": "ctxData"
                 })
